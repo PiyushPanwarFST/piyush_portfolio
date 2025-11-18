@@ -31,8 +31,19 @@ export default function Projects() {
               animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
             >
-              <div className="h-48 bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-                <span className="text-white text-4xl font-bold">{project.name.charAt(0)}</span>
+              <div className="h-48 relative overflow-hidden">
+                {project.image ? (
+                  <img
+                    src={project.image}
+                    alt={project.name}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="h-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+                    <span className="text-white text-4xl font-bold">{project.name.charAt(0)}</span>
+                  </div>
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">{project.name}</h3>

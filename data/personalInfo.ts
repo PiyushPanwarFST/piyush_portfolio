@@ -9,7 +9,7 @@ export const personalInfo = {
   phone: '+91-7004544142',
   resume: '/resume.pdf',
   social: {
-    github: 'https://github.com/yourusername', // Update with your GitHub
+    github: 'https://github.com/rishavtarway',
     linkedin: 'https://www.linkedin.com/in/rishav-tarway-fst/',
     leetcode: 'https://leetcode.com/yourusername', // Update with your LeetCode
     opensource: 'https://wiggly-cyclone-4b3.notion.site/Open-Source-Contributions-196c5ae56b3480ffa68cce470f9fd6cc',

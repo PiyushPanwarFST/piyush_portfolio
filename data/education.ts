@@ -24,19 +24,5 @@ export const education: Education[] = [
       'Multiple Languages',
     ],
   },
-  {
-    degree: 'Higher Secondary',
-    institution: 'DAV CANTT',
-    duration: '2022',
-    location: 'Gaya',
-    percentage: '75%',
-  },
-  {
-    degree: 'Secondary',
-    institution: 'DAV CRRC',
-    duration: '2020',
-    location: 'Gaya',
-    percentage: '80%',
-  },
 ]
 

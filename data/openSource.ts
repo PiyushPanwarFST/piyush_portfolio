@@ -16,7 +16,7 @@ export const openSourceContributions: OpenSourceContribution[] = [
     description: 'Enhanced core JavaScript utilities library used by 1M+ monthly users. Improved type safety and performance across multiple utility functions.',
     prs: [
       {
-        number: 'PR #1',
+        number: 'PR #5313',
         title: 'Enhanced type safety in utility functions',
         impact: 'Improved reliability for 1M+ monthly users',
       },
@@ -32,14 +32,14 @@ export const openSourceContributions: OpenSourceContribution[] = [
       },
     ],
     technologies: ['JavaScript', 'TypeScript', 'Node.js'],
-    link: 'https://github.com/stdlib-js/stdlib',
+    link: 'https://github.com/stdlib-js/stdlib/pull/5313',
   },
   {
     project: 'OpenPrinting',
     description: 'Fixed CUPS driver bugs enabling seamless printing on Linux for enterprise users. Contributed to improving cross-platform printing capabilities.',
     prs: [
       {
-        number: 'PR #1',
+        number: 'PR #8',
         title: 'Fixed CUPS driver compatibility issues',
         impact: 'Enabled seamless printing on Linux for enterprise users',
       },
@@ -50,7 +50,7 @@ export const openSourceContributions: OpenSourceContribution[] = [
       },
     ],
     technologies: ['C', 'Linux', 'CUPS', 'System Programming'],
-    link: 'https://github.com/OpenPrinting',
+    link: 'https://github.com/OpenPrinting/pyppd/pull/8',
   },
 ]
 

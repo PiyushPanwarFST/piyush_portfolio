@@ -4,26 +4,8 @@ import { motion } from 'framer-motion'
 import { FaGithub, FaLinkedin, FaEnvelope, FaDownload } from 'react-icons/fa'
 import Image from 'next/image'
 import { personalInfo } from '@/data/personalInfo'
-import { useState, useEffect } from 'react'
 
 export default function Hero() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      const hero = document.getElementById('home')
-      if (hero) {
-        const rect = hero.getBoundingClientRect()
-        setMousePosition({
-          x: e.clientX - rect.left,
-          y: e.clientY - rect.top,
-        })
-      }
-    }
-
-    window.addEventListener('mousemove', handleMouseMove)
-    return () => window.removeEventListener('mousemove', handleMouseMove)
-  }, [])
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center section-container pt-32 relative overflow-hidden">
@@ -65,28 +47,8 @@ export default function Hero() {
           transition={{ duration: 0.6 }}
         >
           <div className="mb-8 relative">
-            {/* Outer animated ring */}
-            <motion.div
-              className="absolute inset-0 rounded-full"
-              animate={{
-                rotate: 360,
-              }}
-              transition={{
-                duration: 20,
-                repeat: Infinity,
-                ease: 'linear',
-              }}
-            >
-              <div className="w-36 h-36 md:w-48 md:h-48 mx-auto rounded-full bg-gradient-to-r from-primary via-secondary to-primary bg-[length:200%_200%] animate-gradient-xy"></div>
-            </motion.div>
-
-            {/* Image container with gradient border */}
-            <motion.div
-              className="relative w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full bg-gradient-to-br from-primary to-secondary p-1"
-              style={{
-                transform: `perspective(1000px) rotateY(${(mousePosition.x - 200) / 20}deg) rotateX(${(mousePosition.y - 200) / -20}deg)`,
-              }}
-            >
+            {/* Image container with gradient border - stable, no animations */}
+            <div className="relative w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full bg-gradient-to-br from-primary to-secondary p-1">
               <div className="w-full h-full rounded-full bg-gray-50 dark:bg-gray-900 overflow-hidden relative">
                 <div className="absolute inset-0 flex items-center justify-center text-4xl md:text-5xl font-bold gradient-text z-0">
                   {personalInfo.initials}
@@ -111,34 +73,7 @@ export default function Hero() {
                   }}
                 />
               </div>
-
-              {/* Animated corner accents */}
-              <motion.div
-                className="absolute -top-2 -right-2 w-8 h-8 bg-primary rounded-full blur-sm"
-                animate={{
-                  scale: [1, 1.5, 1],
-                  opacity: [0.5, 0.8, 0.5],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                }}
-              />
-              <motion.div
-                className="absolute -bottom-2 -left-2 w-8 h-8 bg-secondary rounded-full blur-sm"
-                animate={{
-                  scale: [1, 1.5, 1],
-                  opacity: [0.5, 0.8, 0.5],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                  delay: 1,
-                }}
-              />
-            </motion.div>
+            </div>
           </div>
           
           <motion.h1
@@ -205,7 +140,7 @@ export default function Hero() {
           >
             <a
               href={personalInfo.resume}
-              download
+              download="Rishav_Tarway_Resume.pdf"
               className="inline-flex items-center px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors"
             >
               <FaDownload className="mr-2" />
