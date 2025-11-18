@@ -29,9 +29,9 @@ export default function AnimatedBackground() {
       radius: number
       color: string
 
-      constructor() {
-        this.x = Math.random() * canvas.width
-        this.y = Math.random() * canvas.height
+      constructor(canvasWidth: number, canvasHeight: number) {
+        this.x = Math.random() * canvasWidth
+        this.y = Math.random() * canvasHeight
         this.vx = (Math.random() - 0.5) * 0.5
         this.vy = (Math.random() - 0.5) * 0.5
         this.radius = Math.random() * 2 + 1
@@ -57,7 +57,7 @@ export default function AnimatedBackground() {
 
     const particles: Particle[] = []
     for (let i = 0; i < 50; i++) {
-      particles.push(new Particle())
+      particles.push(new Particle(canvas.width, canvas.height))
     }
 
     const animate = () => {
