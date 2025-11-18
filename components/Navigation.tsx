@@ -37,9 +37,9 @@ export default function Navigation() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 md:h-20">
+        <div className="flex justify-end items-center h-16 md:h-20">
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8 ml-auto">
+          <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <a
                 key={item.name}
