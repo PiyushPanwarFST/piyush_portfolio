@@ -26,7 +26,7 @@ export default function Projects() {
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className="bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow"
+              className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-primary/30"
               initial={{ opacity: 0, y: 50 }}
               animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
@@ -59,7 +59,7 @@ export default function Projects() {
                   {project.technologies.map((tech, idx) => (
                     <span
                       key={idx}
-                      className="px-2 py-1 bg-primary/10 dark:bg-primary/20 text-primary rounded text-xs"
+                      className="px-3 py-1 bg-teal-50 dark:bg-primary/20 text-teal-700 dark:text-teal-300 rounded-full text-xs font-medium border border-teal-200 dark:border-teal-700"
                     >
                       {tech}
                     </span>

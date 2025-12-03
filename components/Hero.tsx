@@ -48,9 +48,9 @@ export default function Hero() {
         >
           <div className="mb-8 relative">
             {/* Image container with gradient border - stable, no animations */}
-            <div className="relative w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full bg-gradient-to-br from-primary to-secondary p-1">
+            <div className="relative w-48 h-48 md:w-56 md:h-56 mx-auto rounded-full bg-gradient-to-br from-primary to-secondary p-1">
               <div className="w-full h-full rounded-full bg-gray-50 dark:bg-gray-900 overflow-hidden relative">
-                <div className="absolute inset-0 flex items-center justify-center text-4xl md:text-5xl font-bold gradient-text z-0">
+                <div className="absolute inset-0 flex items-center justify-center text-5xl md:text-6xl font-bold gradient-text z-0">
                   {personalInfo.initials}
                 </div>
                 <Image

@@ -36,7 +36,7 @@ export default function OpenSource() {
           {openSourceContributions.map((contribution, index) => (
             <motion.div
               key={index}
-              className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
+              className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-800 hover:border-primary/30"
               initial={{ opacity: 0, x: -50 }}
               animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
               transition={{ delay: index * 0.2, duration: 0.6 }}
@@ -77,7 +77,7 @@ export default function OpenSource() {
                 {contribution.technologies.map((tech, idx) => (
                   <span
                     key={idx}
-                    className="px-3 py-1 bg-primary/10 dark:bg-primary/20 text-primary rounded-full text-sm"
+                    className="px-3 py-1 bg-teal-50 dark:bg-primary/20 text-teal-700 dark:text-teal-300 rounded-full text-sm font-medium border border-teal-200 dark:border-teal-700"
                   >
                     {tech}
                   </span>
@@ -94,7 +94,7 @@ export default function OpenSource() {
             {achievements.map((achievement, index) => (
               <motion.div
                 key={index}
-                className="bg-gradient-to-r from-primary/10 to-secondary/10 dark:from-primary/20 dark:to-secondary/20 p-6 rounded-lg shadow-lg mb-6"
+                className="bg-gradient-to-br from-teal-50 to-emerald-50 dark:from-primary/20 dark:to-secondary/20 p-6 rounded-xl shadow-lg mb-6 border border-teal-100 dark:border-teal-900"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
                 transition={{ delay: (openSourceContributions.length + index) * 0.2, duration: 0.6 }}

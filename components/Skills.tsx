@@ -37,8 +37,8 @@ export default function Skills() {
                 {skillList.map((skill, index) => (
                   <motion.span
                     key={index}
-                    className="px-4 py-2 bg-gradient-to-r from-primary to-secondary text-white rounded-lg font-medium"
-                    whileHover={{ scale: 1.05 }}
+                    className="px-4 py-2 bg-white dark:bg-gray-800 border-2 border-primary/20 hover:border-primary/60 text-gray-800 dark:text-gray-200 rounded-lg font-medium shadow-sm hover:shadow-md transition-all duration-200"
+                    whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                   >
                     {skill}

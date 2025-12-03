@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { experience } from '@/data/experience'
-import { FaCalendarAlt, FaMapMarkerAlt } from 'react-icons/fa'
+import { FaCalendarAlt, FaMapMarkerAlt, FaExternalLinkAlt } from 'react-icons/fa'
 
 export default function Experience() {
   const [ref, inView] = useInView({
@@ -26,14 +26,27 @@ export default function Experience() {
           {experience.map((exp, index) => (
             <motion.div
               key={index}
-              className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow"
+              className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-800 hover:border-primary/30"
               initial={{ opacity: 0, x: -50 }}
               animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
               transition={{ delay: index * 0.2, duration: 0.6 }}
             >
               <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
                 <div>
-                  <h3 className="text-2xl font-bold text-primary">{exp.position}</h3>
+                  <div className="flex items-center gap-2">
+                    <h3 className="text-2xl font-bold text-primary">{exp.position}</h3>
+                    {exp.link && (
+                      <a
+                        href={exp.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:text-primary/80 transition-colors"
+                        title="View more details"
+                      >
+                        <FaExternalLinkAlt className="text-lg" />
+                      </a>
+                    )}
+                  </div>
                   <p className="text-xl text-gray-700 dark:text-gray-300">{exp.company}</p>
                 </div>
                 <div className="mt-2 md:mt-0 text-gray-600 dark:text-gray-400">
@@ -69,7 +82,7 @@ export default function Experience() {
                   {exp.technologies.map((tech, idx) => (
                     <span
                       key={idx}
-                      className="px-3 py-1 bg-primary/10 dark:bg-primary/20 text-primary rounded-full text-sm"
+                      className="px-3 py-1 bg-teal-50 dark:bg-primary/20 text-teal-700 dark:text-teal-300 rounded-full text-sm font-medium border border-teal-200 dark:border-teal-700"
                     >
                       {tech}
                     </span>

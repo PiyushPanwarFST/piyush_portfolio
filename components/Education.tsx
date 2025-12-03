@@ -26,7 +26,7 @@ export default function Education() {
           {education.map((edu, index) => (
             <motion.div
               key={index}
-              className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow"
+              className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-800 hover:border-primary/30"
               initial={{ opacity: 0, x: -50 }}
               animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
               transition={{ delay: index * 0.2, duration: 0.6 }}
@@ -58,7 +58,7 @@ export default function Education() {
                         {edu.courses.map((course, idx) => (
                           <span
                             key={idx}
-                            className="px-3 py-1 bg-primary/10 dark:bg-primary/20 text-primary rounded-full text-sm"
+                            className="px-3 py-1 bg-teal-50 dark:bg-primary/20 text-teal-700 dark:text-teal-300 rounded-full text-sm font-medium border border-teal-200 dark:border-teal-700"
                           >
                             {course}
                           </span>

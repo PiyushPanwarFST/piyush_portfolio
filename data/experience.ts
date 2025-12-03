@@ -6,73 +6,53 @@ export interface Experience {
   responsibilities: string[]
   technologies?: string[]
   prs?: { number: string; description: string }[]
+  link?: string
 }
 
 export const experience: Experience[] = [
   {
-    position: 'Research SWE Intern',
-    company: 'IIIT Bangalore - MOSIP',
-    duration: 'Jul 2025 - Oct 2025',
-    location: 'Remote | Open Source',
+    position: 'Research Intern',
+    company: 'Statistical Modeling (Academic)',
+    duration: 'Oct 2025 - Present',
+    location: 'Remote/Academic',
     responsibilities: [
-      'Built Selenium + Java + Cucumber BDD test suites for government identity systems',
-      'Automated multilingual navigation & eSignet IDP verification',
-      'Prevented auto-logout during background sync operations',
+      'Pioneered Monte Carlo simulation study to estimate Stress-Strength Reliability (SSR) for Xgamma-Exponential (Xg-E) distribution',
+      'Implemented advanced MLE techniques under GPHC and debugged fundamental error in core mathematical expression for SSR',
+      'Optimized simulation framework using Python and Numba (JIT), achieving high precision across 10,000 replications',
+      'Analyzed simulation outputs using Matplotlib and Pandas to visualize reliability trends, validating theoretical models against empirical data',
     ],
-    technologies: ['Java', 'Selenium', 'Cucumber', 'BDD', 'Test Automation'],
+    technologies: ['Python', 'Numba/JIT', 'Monte Carlo Simulation', 'MLE', 'Matplotlib', 'Pandas', 'Statistical Analysis'],
+    link: 'https://www.notion.so/Project-Stress-Strength-Reliability-Estimation-Xg-E-Distribution-22d300c37fe680409883db75cfef998f',
+  },
+  {
+    position: 'AI/ML Intern',
+    company: 'Detoxio AI',
+    duration: 'June 2025 - Sept 2025',
+    location: 'Remote',
+    responsibilities: [
+      'Developed AI agent configurations for model testing, enhancing the efficiency of red teaming processes',
+      'Conducted extensive testing on models from Ollama and Hugging Face, focusing on advanced learning techniques such as Jailbreaking and adversarial attacks',
+      'Automated testing procedures using NOX, significantly reducing manual effort and increasing testing throughput by 40%',
+    ],
+    technologies: ['Python', 'Hugging Face', 'Ollama', 'NOX', 'AI Testing', 'Red Teaming', 'Model Validation'],
+    link: 'https://detoxio.ai/',
+  },
+  {
+    position: 'Open Source Contributor (ArviZ)',
+    company: 'ArviZ - Bayesian Analysis Library',
+    duration: 'Jan 2024 - Present',
+    location: 'Remote',
+    responsibilities: [
+      'Spearheaded core computational features including bayes_factor() and plot_ppc_intervals() for advanced Bayesian Model Comparison',
+      'Led architectural refactoring initiatives, migrating plotting modules for improved modularity, scalability, and clean separation of concerns',
+      'Reinforced test reliability and code stability by extending Pytest coverage and implementing Test-Driven Development (TDD)',
+      'Enhanced user accessibility across visualization backends and ensured code quality through refactoring of core statistical logic (KDE)',
+    ],
+    technologies: ['Python', 'Bayesian Analysis', 'ArviZ', 'Pytest', 'TDD', 'Statistical Computing', 'Data Visualization'],
     prs: [
-      { number: '#1370', description: 'Automated multilingual navigation & eSignet IDP verification' },
-      { number: '#543', description: 'Prevented auto-logout during background sync' },
+      { number: '8+ PRs', description: 'View detailed portfolio of merged contributions' },
     ],
-  },
-  {
-    position: 'Software Engineer Intern',
-    company: 'ClassPlus',
-    duration: 'Nov 2024 - Jan 2025',
-    location: 'Noida',
-    responsibilities: [
-      'Improved monitoring by 40% via unique request IDs and Express.js middleware',
-      'Enhanced error tracking in async-local-storage for better debugging',
-      'Cut response time by 25% for 10k+ concurrent users through optimization',
-    ],
-    technologies: ['Node.js', 'Express.js', 'JavaScript', 'Monitoring', 'Performance Optimization'],
-  },
-  {
-    position: 'Full Stack Developer Intern',
-    company: 'TechVastra',
-    duration: 'Sep 2024 - Nov 2024',
-    location: 'Remote',
-    responsibilities: [
-      'Built responsive Next.js + TypeScript app integrated with Android platform',
-      'Enhanced performance by 30% via React Hooks optimization',
-      'Designed RESTful APIs for 10k+ user data synchronization',
-    ],
-    technologies: ['Next.js', 'TypeScript', 'React', 'REST APIs', 'Android Integration'],
-  },
-  {
-    position: 'QA Automation Intern',
-    company: 'Testbook',
-    duration: 'Sep 2024 - Nov 2024',
-    location: 'Noida',
-    responsibilities: [
-      'Built Selenium + ChromeDriver framework achieving 50% faster test execution',
-      'Developed test cases uncovering 30+ critical bugs in production',
-      'Automated repetitive testing processes, enhancing scalability and accuracy',
-      'Reduced regression testing time significantly through automation',
-    ],
-    technologies: ['Selenium', 'Java', 'ChromeDriver', 'Test Automation', 'QA'],
-  },
-  {
-    position: 'Frontend Developer Intern',
-    company: 'Franchizerz',
-    duration: 'Jul 2024 - Dec 2024',
-    location: 'Remote',
-    responsibilities: [
-      'Designed Franchizerz.com UI with React + Next.js + REST APIs',
-      'Applied HTML5/CSS3/JS + OOP principles for scalable code architecture',
-      'Boosted Lighthouse score from 68 to 92 via code-splitting & lazy loading',
-    ],
-    technologies: ['React', 'Next.js', 'HTML5', 'CSS3', 'JavaScript', 'REST APIs', 'Performance Optimization'],
+    link: 'https://github.com/arviz-devs/arviz',
   },
 ]
 

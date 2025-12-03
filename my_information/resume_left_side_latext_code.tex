@@ -1,0 +1,140 @@
+
+
+\documentclass[10pt,a4paper,ragged2e]{altacv}
+\geometry{left=2cm, right=10cm, marginparwidth=6.8cm, marginparsep=1.2cm, top=1.25cm, bottom=1.25cm}
+
+\ifxetexorluatex
+  \setmainfont{Carlito}
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage[default]{lato}
+  \usepackage{hyperref}
+  \hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+\fi
+\definecolor{VividPurple}{HTML}{000000}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{2E2E2E}
+\colorlet{heading}{VividPurple}
+\colorlet{accent}{VividPurple}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+\addbibresource{sample.bib}
+
+\begin{document}
+\name{PIYUSH PANWAR}
+\tagline{Software Engineer}
+% Cropped to square from https://en.wikipedia.org/wiki/Marissa_Mayer#/media/File:Marissa_Mayer_May_2014_(cropped).jpg, CC-BY 2.0
+%\photo{3.3cm}{profile.jpg}
+\personalinfo{%
+  % Not all of these are required!
+  % You can add your own with \printinfo{symbol}{detail}
+  \phone{+91-8306968232}
+  \email{piyush2002panwar@gmail.com}
+%   \phone{000-00-0000}
+%  \mailaddress{Address, Street, 00000 County}
+  \location{Gurugram, India}
+%  \homepage{marissamayr.tumblr.com/}
+%  \twitter{@marissamayer}
+  \linkedin{\href{https://www.linkedin.com/in/piyush-panwar-80b65827b/}{Linkedin}}
+  \github{\href{https://github.com/PiyushPanwarFST}{Github}}
+  \leetcode{\href{https://leetcode.com/u/Piyush12341/}{Leetcode}}
+%   \orcid{orcid.org/0000-0000-0000-0000} % Obviously making this up too. If you want to use this field (and also other academicons symbols), add "academicons" option to \documentclass{altacv}
+}
+
+%% Make the header extend all the way to the right, if you want.
+\begin{fullwidth}
+\makecvheader
+\end{fullwidth}
+
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+\AtBeginEnvironment{itemize}{\small}
+
+%% Provide the file name containing the sidebar contents as an optional parameter to \cvsection.
+%% You can always just use \marginpar{...} if you do
+%% not need to align the top of the contents to any
+%% \cvsection title in the "main" bar.
+
+\cvsection[page1sidebar]{Experience}
+
+\cvevent {\textbf{AI/ML Intern}}{\href{https://detoxio.ai/}{Detoxio AI \faExternalLink}}{\textbf{June 2025 -- Sept 2025}}{ \textbf{Remote}}
+\begin{itemize}
+\item Developed \textbf{AI agent configurations} for model testing, enhancing the efficiency of \textbf{red teaming} processes
+\item Conducted extensive testing on models from \textbf{Ollama} and \textbf{Hugging Face}, focusing on advanced learning techniques such as \textbf{Jailbreaking} and adversarial attacks
+\smallskip
+\item Automated testing procedures using \textbf{NOX}, significantly reducing manual effort and increasing testing throughput by 40\%
+\end{itemize}
+\\
+\divider
+%\divider
+
+% ==============================================================================
+% RESEARCH INTERN (SSR/GPHC) - CONCISE FORMAT
+% ==============================================================================
+\cvevent {\textbf{Research Intern}}{\href{https://www.notion.so/Project-Stress-Strength-Reliability-Estimation-Xg-E-Distribution-22d300c37fe680409883db75cfef998f}{Statistical Modeling (Academic) \faExternalLink}}{\textbf{Oct 2025 -- Present}}{ \textbf{Remote/Academic}}
+\begin{itemize}
+    % Point 1: Model & Core Method (The WHAT)
+    \item \textbf{Pioneered} a Monte Carlo simulation study to estimate \textbf{Stress-Strength Reliability (SSR)} for the \textbf{Xgamma-Exponential (Xg-E) distribution}.
+    
+    % Point 2: Rigor & Implementation (The HOW)
+    \item \textbf{Implemented} advanced \textbf{MLE} techniques under **GPHC** and \textbf{Debugged} a fundamental error in the core mathematical expression for SSR.
+    
+    % Point 3: Technical Stack & Optimization (The TOOLS)
+    \item \textbf{Optimized} the simulation framework using **Python** and **Numba (JIT)**, achieving high precision across **10,000 replications** and reducing computation time.
+    
+    % Point 4: Validation (The RESULTS)
+    \item \textbf{Analyzed} simulation outputs using Matplotlib and Pandas to visualize reliability trends, validating theoretical models against empirical data.
+\end{itemize}
+\\
+\divider
+
+% ==============================================================================
+% OPEN SOURCE CONTRIBUTION (ARVIZ) - FINAL CORRECTED CODE
+% ==============================================================================
+\cvevent{\textbf{Open Source Contributor (ArviZ)}}{\href{https://github.com/arviz-devs/arviz}{ArviZ – Bayesian Analysis Library \faExternalLink}}{\textbf{Jan 2024 -- Present}}{ \textbf{Remote}}
+\begin{itemize}
+    \vspace{1pt} % Extra space for better visual separation
+    % Point 1: Computational Core & Feature Development (Linking Hero PRs)
+    \item \textbf{Spearheaded} core computational features (e.g., implemented \href{https://github.com/arviz-devs/arviz-stats/pull/52}{\texttt{bayes\_factor()}} and developed \href{https://github.com/arviz-devs/arviz-plots/pull/334}{\texttt{plot\_ppc\_intervals()}}) for advanced \textbf{Bayesian Model Comparison} and validation.
+
+    \vspace{1pt} % Extra space for better visual separation
+    % Point 2: Architecture & Scalability (Covering Refactoring Initiative)
+    \item \textbf{Led} architectural refactoring initiatives, migrating plotting modules for improved **modularity, scalability, and clean separation of concerns**.
+
+    \vspace{1pt} % Extra space for better visual separation
+    % Point 3: Test Coverage and Automation
+    \item \textbf{Reinforced} test reliability and code stability by significantly **extending Pytest coverage** and implementing **Test-Driven Development (TDD)** across statistical features.
+
+    \vspace{1pt} % Extra space for better visual separation
+    % Point 4: Code Quality, Visualization & Tools
+    \item \textbf{Enhanced} user accessibility across visualization backends and ensured code quality through refactoring of core statistical logic (\texttt{KDE}) and adherence to open-source standards.
+\end{itemize}
+
+% --- ADDING THE PORTFOLIO LINK BACK ---
+\vspace{4pt} % Extra space for better visual separation
+\small{
+    \textbf{Detailed Contributions:} \href{https://www.notion.so/Open-Source-Contributions-Piyush-Panwar-1f6300c37fe680dd8c7ce6af712e95ae}{\underline{View Portfolio of 8+ Merged Pull Requests \faExternalLink}}
+}
+% Note: The \divider command is now placed *after* this link line.
+
+\cvsection[page1sidebar]{Education}
+% \cvsection{Education}
+\cvevent{B.Tech. (CSE) - 8.62 CGPA}{Polaris School of Technology  (Starex University)}
+         {2023 -- 2027}{Gurugram, Haryana}{}
+
+% \cvevent{Higher Secondary - 84\%}{Price Academy}{2021}{Sikar, Rajasthan}{}
+% \cvevent{Secondary - 84 \%  }{Prince Academy}{2021}{Sikar, Rajasthan}{}
+
+\clearpage
+\nocite{*}
+
+\end{document}

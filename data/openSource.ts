@@ -12,54 +12,53 @@ export interface OpenSourceContribution {
 
 export const openSourceContributions: OpenSourceContribution[] = [
   {
-    project: 'Stdlib.js',
-    description: 'Enhanced core JavaScript utilities library used by 1M+ monthly users. Improved type safety and performance across multiple utility functions.',
+    project: 'ArviZ - Bayesian Analysis Library',
+    description: 'Leading contributor to ArviZ, a Python library for exploratory analysis of Bayesian models. Spearheaded core computational features, architectural refactoring, and improved test coverage for statistical functions used by thousands of researchers worldwide.',
     prs: [
       {
-        number: 'PR #5313',
-        title: 'Enhanced type safety in utility functions',
-        impact: 'Improved reliability for 1M+ monthly users',
+        number: 'bayes_factor()',
+        title: 'Implemented Bayesian Model Comparison feature',
+        impact: 'Core computational feature for advanced statistical analysis',
       },
       {
-        number: 'PR #2',
-        title: 'Performance optimization in core utilities',
-        impact: 'Reduced execution time by 15%',
+        number: 'plot_ppc_intervals()',
+        title: 'Developed posterior predictive check visualization',
+        impact: 'Enhanced model validation capabilities for users',
       },
       {
-        number: 'PR #3',
-        title: 'Additional utility enhancements',
-        impact: 'Better developer experience',
+        number: 'Refactoring',
+        title: 'Led architectural refactoring of plotting modules',
+        impact: 'Improved modularity, scalability, and code maintainability',
+      },
+      {
+        number: 'Testing',
+        title: 'Extended Pytest coverage with TDD approach',
+        impact: 'Significantly improved code stability and reliability',
+      },
+      {
+        number: 'KDE Logic',
+        title: 'Refactored core statistical logic',
+        impact: 'Enhanced performance and adherence to open-source standards',
       },
     ],
-    technologies: ['JavaScript', 'TypeScript', 'Node.js'],
-    link: 'https://github.com/stdlib-js/stdlib/pull/5313',
-  },
-  {
-    project: 'OpenPrinting',
-    description: 'Fixed CUPS driver bugs enabling seamless printing on Linux for enterprise users. Contributed to improving cross-platform printing capabilities.',
-    prs: [
-      {
-        number: 'PR #8',
-        title: 'Fixed CUPS driver compatibility issues',
-        impact: 'Enabled seamless printing on Linux for enterprise users',
-      },
-      {
-        number: 'PR #2',
-        title: 'Improved driver error handling',
-        impact: 'Better error reporting and debugging',
-      },
-    ],
-    technologies: ['C', 'Linux', 'CUPS', 'System Programming'],
-    link: 'https://github.com/OpenPrinting/pyppd/pull/8',
+    technologies: ['Python', 'Bayesian Statistics', 'ArviZ', 'Pytest', 'Statistical Computing', 'Data Visualization'],
+    link: 'https://www.notion.so/Open-Source-Contributions-Piyush-Panwar-1f6300c37fe680dd8c7ce6af712e95ae',
   },
 ]
 
 export const achievements = [
   {
-    title: '1st Runner-Up - Hack With Uttarakhand',
+    title: 'First Runner-Up - Hack With Uttarakhand',
     team: 'Team Code Heist',
-    description: 'Led a 36-hour offline hackathon team building an AI-powered resume generator with GPT integration. Demonstrated leadership, technical skills, and ability to work under pressure.',
-    technologies: ['AI', 'GPT', 'React', 'Node.js'],
+    description: 'Led a 36-hour offline hackathon with innovative problem solving and teamwork. Demonstrated strong technical skills, leadership abilities, and capacity to deliver under pressure.',
+    technologies: ['Problem Solving', 'Team Leadership', 'Innovation'],
+    year: '2024',
+  },
+  {
+    title: 'Open Source Contributor',
+    team: 'HacktoberFest & GirlScript',
+    description: 'Active participant in major open-source initiatives including HacktoberFest and GirlScript. Contributed to enhancing real-world software development skills and giving back to the developer community.',
+    technologies: ['Open Source', 'Community Engagement', 'Software Development'],
     year: '2024',
   },
 ]

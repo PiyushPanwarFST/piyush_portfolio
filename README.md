@@ -1,4 +1,4 @@
-# Rishav Tarway - Portfolio Website
+# Piyush Panwar - Portfolio Website
 
 A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS.
 
