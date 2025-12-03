@@ -12,7 +12,7 @@
 
 3. **Verify**
    - The download button in the Hero section will automatically work
-   - The file will be downloadable as "Rishav_Tarway_Resume.pdf"
+   - The file will be downloadable as "Piysuh_Panwar.pdf"
 
 ## Current Status
 
