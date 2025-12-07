@@ -27,33 +27,33 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="section-container bg-gradient-to-br from-teal-50 via-white to-emerald-50 dark:from-dark dark:via-dark dark:to-dark dark:bg-none dark:bg-dark">
+    <section id="contact" className="section-container bg-white dark:bg-dark">
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 50 }}
         animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="section-title text-gray-900 dark:text-gray-100">
-          Get In <span className="gradient-text">Touch</span>
+        <h2 className="section-title text-slate-900 dark:text-slate-100 font-sans">
+          Get In <span className="text-secondary">Touch</span>
         </h2>
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
-            <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-gray-100">Let&apos;s Connect</h3>
-            <p className="text-gray-700 dark:text-gray-300 mb-6">
+            <h3 className="text-2xl font-bold mb-4 text-slate-900 dark:text-slate-100 font-sans">Let&apos;s Connect</h3>
+            <p className="text-slate-700 dark:text-slate-300 mb-6 font-sans">
               I&apos;m always open to discussing new opportunities, interesting projects, or just having a chat about technology.
             </p>
             <div className="space-y-4">
               <a
                 href={`mailto:${personalInfo.email}`}
-                className="flex items-center text-gray-700 dark:text-gray-300 hover:text-primary transition-colors"
+                className="flex items-center text-slate-700 dark:text-slate-300 hover:text-secondary transition-colors font-mono"
               >
                 <FaEnvelope className="mr-3 text-xl" />
                 <span>{personalInfo.email}</span>
               </a>
               <a
                 href={`tel:${personalInfo.phone}`}
-                className="flex items-center text-gray-700 dark:text-gray-300 hover:text-primary transition-colors"
+                className="flex items-center text-slate-700 dark:text-slate-300 hover:text-secondary transition-colors font-mono"
               >
                 <FaPhone className="mr-3 text-xl" />
                 <span>{personalInfo.phone}</span>
@@ -63,7 +63,7 @@ export default function Contact() {
                   href={personalInfo.social.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-2xl text-gray-700 dark:text-gray-300 hover:text-primary transition-colors"
+                  className="text-2xl text-slate-700 dark:text-slate-300 hover:text-secondary transition-colors"
                 >
                   <FaGithub />
                 </a>
@@ -71,7 +71,7 @@ export default function Contact() {
                   href={personalInfo.social.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-2xl text-gray-700 dark:text-gray-300 hover:text-primary transition-colors"
+                  className="text-2xl text-slate-700 dark:text-slate-300 hover:text-secondary transition-colors"
                 >
                   <FaLinkedin />
                 </a>
@@ -80,7 +80,7 @@ export default function Contact() {
           </div>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              <label htmlFor="name" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2 font-mono">
                 Name
               </label>
               <input
@@ -89,11 +89,11 @@ export default function Contact() {
                 required
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+                className="w-full px-4 py-2 border border-slate-300 dark:border-slate-700 rounded-md bg-white dark:bg-surface text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-secondary focus:border-transparent transition-colors font-mono"
               />
             </div>
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              <label htmlFor="email" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2 font-mono">
                 Email
               </label>
               <input
@@ -102,11 +102,11 @@ export default function Contact() {
                 required
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+                className="w-full px-4 py-2 border border-slate-300 dark:border-slate-700 rounded-md bg-white dark:bg-surface text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-secondary focus:border-transparent transition-colors font-mono"
               />
             </div>
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              <label htmlFor="message" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2 font-mono">
                 Message
               </label>
               <textarea
@@ -115,12 +115,12 @@ export default function Contact() {
                 rows={5}
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+                className="w-full px-4 py-2 border border-slate-300 dark:border-slate-700 rounded-md bg-white dark:bg-surface text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-secondary focus:border-transparent transition-colors font-mono"
               />
             </div>
             <button
               type="submit"
-              className="w-full px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors font-medium"
+              className="w-full px-6 py-3 bg-secondary text-primary rounded-md hover:bg-teal-300 transition-colors font-bold font-mono"
             >
               Send Message
             </button>

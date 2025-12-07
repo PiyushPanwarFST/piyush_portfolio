@@ -53,43 +53,44 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-left z-10 order-2 lg:order-1"
         >
-          <div className="inline-block px-4 py-2 mb-6 bg-blue-50 dark:bg-blue-900/20 text-secondary rounded-full text-sm font-semibold tracking-wide uppercase">
-            Available for Opportunities
+          <div className="inline-block px-4 py-2 mb-6 bg-surface dark:bg-surface border border-slate-700 rounded-md text-secondary font-mono text-sm tracking-wide">
+            &gt; Available for Opportunities
           </div>
 
-          <h1 className="text-5xl lg:text-7xl font-bold mb-6 text-primary dark:text-white leading-tight">
+          <h1 className="text-5xl lg:text-7xl font-bold mb-6 text-slate-900 dark:text-slate-100 leading-tight font-sans">
             Making AI <span className="text-secondary">Reliable</span><br />
             with Math & Code
           </h1>
 
-          <div className="h-8 mb-6">
-            <span className="text-xl lg:text-2xl text-gray-600 dark:text-gray-300 font-medium">
-              I am a <span className="text-secondary font-semibold">{text}</span>
+          <div className="h-8 mb-6 font-mono">
+            <span className="text-xl lg:text-2xl text-slate-600 dark:text-slate-400">
+              <span className="text-accent mr-2">def</span>
+              <span className="text-secondary font-semibold">{text}</span>
               <span className="animate-pulse text-secondary">|</span>
             </span>
           </div>
 
-          <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-xl leading-relaxed">
+          <p className="text-lg text-slate-600 dark:text-slate-400 mb-8 max-w-xl leading-relaxed font-sans">
             I apply reliability engineering (Stress-Strength models) to predict when LLMs fail.
           </p>
 
           <div className="flex flex-wrap gap-4">
             <a
               href="#projects"
-              className="inline-flex items-center px-8 py-4 bg-secondary text-white rounded-lg font-medium hover:bg-blue-600 transition-all shadow-lg hover:shadow-blue-500/25"
+              className="inline-flex items-center px-8 py-4 bg-secondary text-primary font-bold rounded-md hover:bg-teal-300 transition-all shadow-lg hover:shadow-teal-500/25 font-mono"
             >
               View Projects <FaArrowRight className="ml-2" />
             </a>
             <a
               href={personalInfo.resume}
               download
-              className="inline-flex items-center px-8 py-4 bg-white dark:bg-gray-800 text-primary dark:text-white border border-gray-200 dark:border-gray-700 rounded-lg font-medium hover:bg-gray-50 dark:hover:bg-gray-700 transition-all"
+              className="inline-flex items-center px-8 py-4 bg-white dark:bg-surface text-slate-900 dark:text-slate-100 border border-slate-200 dark:border-slate-700 rounded-md font-medium hover:bg-slate-50 dark:hover:bg-slate-700 transition-all font-mono"
             >
               <FaDownload className="mr-2" /> Resume
             </a>
           </div>
 
-          <div className="mt-12 flex items-center space-x-6 text-gray-500">
+          <div className="mt-12 flex items-center space-x-6 text-slate-500">
             <a href={personalInfo.social.github} target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition-colors text-2xl"><FaGithub /></a>
             <a href={personalInfo.social.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition-colors text-2xl"><FaLinkedin /></a>
             <a href={`mailto:${personalInfo.email}`} className="hover:text-secondary transition-colors text-2xl"><FaEnvelope /></a>
@@ -104,11 +105,11 @@ export default function Hero() {
           className="relative order-1 lg:order-2 flex justify-center"
         >
           <div className="relative w-72 h-72 md:w-96 md:h-96">
-            {/* Abstract Background Elements */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-blue-100 to-indigo-100 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-full blur-3xl animate-pulse-slow"></div>
+            {/* Abstract Background Elements - Matte Look */}
+            <div className="absolute inset-0 bg-secondary/5 rounded-full blur-3xl"></div>
 
             {/* Profile Image with Corporate Styling */}
-            <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-gray-800 transform rotate-3 hover:rotate-0 transition-transform duration-500">
+            <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-slate-700 transform rotate-3 hover:rotate-0 transition-transform duration-500">
               <Image
                 src="/profile.jpg"
                 alt={personalInfo.name}
@@ -122,12 +123,12 @@ export default function Hero() {
             <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -bottom-6 -left-6 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-xl border border-gray-100 dark:border-gray-700 flex items-center space-x-3"
+              className="absolute -bottom-6 -left-6 bg-white dark:bg-surface p-4 rounded-lg shadow-xl border border-slate-100 dark:border-slate-700 flex items-center space-x-3"
             >
               <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-              <div>
-                <p className="text-xs text-gray-500 uppercase font-semibold">Status</p>
-                <p className="text-sm font-bold text-primary dark:text-white">Open to Work</p>
+              <div className="font-mono">
+                <p className="text-xs text-slate-500 uppercase font-semibold">Status</p>
+                <p className="text-sm font-bold text-slate-900 dark:text-slate-100">Open to Work</p>
               </div>
             </motion.div>
           </div>

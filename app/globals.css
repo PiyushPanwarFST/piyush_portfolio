@@ -6,7 +6,7 @@
   html {
     scroll-behavior: smooth;
   }
-  
+
   body {
     @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300;
   }
@@ -15,12 +15,16 @@
     body {
       cursor: none;
     }
-    
+
     * {
       cursor: none !important;
     }
 
-    a, button, input, textarea, select {
+    a,
+    button,
+    input,
+    textarea,
+    select {
       cursor: pointer !important;
     }
   }
@@ -30,29 +34,17 @@
   .section-container {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24;
   }
-  
+
   .section-title {
     @apply text-3xl md:text-4xl font-bold mb-8 text-center;
   }
-  
+
   .gradient-text {
     @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
   }
 }
 
-@keyframes gradient-xy {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-.animate-gradient-xy {
-  animation: gradient-xy 3s ease infinite;
-  background-size: 200% 200%;
-}
+/* Gradient animations removed for matte look */
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
@@ -71,4 +63,3 @@
 ::selection {
   @apply bg-primary/30 text-primary;
 }
-

@@ -30,7 +30,7 @@ export default function Navigation() {
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${scrolled
-        ? 'bg-white/80 dark:bg-dark/80 backdrop-blur-md shadow-sm border-b border-gray-200 dark:border-gray-800 py-4'
+        ? 'bg-white/90 dark:bg-dark/90 backdrop-blur-sm shadow-sm border-b border-slate-200 dark:border-slate-800 py-4'
         : 'bg-transparent py-6'
         }`}
     >

@@ -12,7 +12,7 @@ export default function Experience() {
   })
 
   return (
-    <section id="experience" className="section-container bg-gray-50 dark:bg-dark/50">
+    <section id="experience" className="section-container bg-slate-50 dark:bg-dark/50">
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 50 }}
@@ -20,17 +20,17 @@ export default function Experience() {
         transition={{ duration: 0.6 }}
       >
         <div className="text-center mb-16">
-          <h2 className="section-title text-primary dark:text-white">
+          <h2 className="section-title text-slate-900 dark:text-slate-100 font-sans">
             Professional <span className="text-secondary">Experience</span>
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mt-4">
+          <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mt-4 font-sans">
             A timeline of my contributions to research, open source, and industry projects.
           </p>
         </div>
 
         <div className="relative max-w-4xl mx-auto">
           {/* Vertical Line */}
-          <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-1 bg-gray-200 dark:bg-gray-800 rounded-full"></div>
+          <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-1 bg-slate-200 dark:bg-slate-800 rounded-full"></div>
 
           {experience.map((exp, index) => (
             <motion.div
@@ -46,58 +46,58 @@ export default function Experience() {
 
               {/* Content Card */}
               <div className="md:w-1/2 pl-12 md:pl-0 md:px-12">
-                <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow border border-gray-100 dark:border-gray-800 relative group">
+                <div className="bg-white dark:bg-surface p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border border-slate-200 dark:border-slate-700 relative group">
                   {/* Arrow for Desktop */}
                   <div
-                    className={`hidden md:block absolute top-6 w-4 h-4 bg-white dark:bg-gray-900 border-t border-l border-gray-100 dark:border-gray-800 transform rotate-45 ${index % 2 === 0 ? '-left-2' : '-right-2 border-t-0 border-l-0 border-b border-r'
+                    className={`hidden md:block absolute top-6 w-4 h-4 bg-white dark:bg-surface border-t border-l border-slate-200 dark:border-slate-700 transform rotate-45 ${index % 2 === 0 ? '-left-2' : '-right-2 border-t-0 border-l-0 border-b border-r'
                       }`}
                   ></div>
 
                   <div className="flex justify-between items-start mb-4">
                     <div>
-                      <h3 className="text-xl font-bold text-primary dark:text-white group-hover:text-secondary transition-colors">
+                      <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 group-hover:text-secondary transition-colors font-sans">
                         {exp.position}
                       </h3>
-                      <p className="text-secondary font-medium">{exp.company}</p>
+                      <p className="text-secondary font-medium font-mono text-sm">{exp.company}</p>
                     </div>
                     {exp.link && (
-                      <a href={exp.link} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-secondary transition-colors">
+                      <a href={exp.link} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-secondary transition-colors">
                         <FaExternalLinkAlt />
                       </a>
                     )}
                   </div>
 
-                  <div className="flex flex-wrap gap-4 text-sm text-gray-500 dark:text-gray-400 mb-4">
+                  <div className="flex flex-wrap gap-4 text-sm text-slate-500 dark:text-slate-400 mb-4 font-mono">
                     <span className="flex items-center"><FaCalendarAlt className="mr-2" /> {exp.duration}</span>
                     <span className="flex items-center"><FaMapMarkerAlt className="mr-2" /> {exp.location}</span>
                   </div>
 
                   <ul className="space-y-2 mb-4">
                     {exp.responsibilities.map((resp, idx) => (
-                      <li key={idx} className="flex items-start text-gray-600 dark:text-gray-300 text-sm">
+                      <li key={idx} className="flex items-start text-slate-600 dark:text-slate-300 text-sm font-sans">
                         <span className="mr-2 mt-1.5 w-1.5 h-1.5 bg-secondary rounded-full flex-shrink-0"></span>
                         <span dangerouslySetInnerHTML={{
-                          __html: resp.replace(/\*\*(.*?)\*\*/g, '<strong class="text-primary dark:text-white font-semibold">$1</strong>')
+                          __html: resp.replace(/\*\*(.*?)\*\*/g, '<strong class="text-slate-900 dark:text-white font-semibold">$1</strong>')
                         }} />
                       </li>
                     ))}
                   </ul>
 
-                  <div className="flex flex-wrap gap-2 mt-4 pt-4 border-t border-gray-100 dark:border-gray-800">
+                  <div className="flex flex-wrap gap-2 mt-4 pt-4 border-t border-slate-100 dark:border-slate-700">
                     {exp.technologies?.map((tech, idx) => (
-                      <span key={idx} className="px-2 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-300 text-xs rounded font-medium">
+                      <span key={idx} className="px-2 py-1 bg-slate-50 dark:bg-slate-900 text-slate-600 dark:text-slate-300 text-xs rounded font-medium font-mono">
                         {tech}
                       </span>
                     ))}
                   </div>
                   {exp.prs && exp.prs.length > 0 && (
-                    <div className="mt-4 p-3 bg-blue-50 dark:bg-blue-900/20 rounded border border-blue-100 dark:border-blue-800">
-                      <p className="text-sm font-semibold text-primary dark:text-white mb-2">Key PRs:</p>
+                    <div className="mt-4 p-3 bg-slate-50 dark:bg-slate-900/50 rounded border border-slate-100 dark:border-slate-700">
+                      <p className="text-sm font-semibold text-slate-900 dark:text-slate-100 mb-2 font-mono">Key PRs:</p>
                       <div className="space-y-1">
                         {exp.prs.map((pr, idx) => (
-                          <div key={idx} className="flex justify-between text-xs">
+                          <div key={idx} className="flex justify-between text-xs font-mono">
                             <span className="font-medium text-secondary">{pr.number}</span>
-                            <span className="text-gray-600 dark:text-gray-400">{pr.description}</span>
+                            <span className="text-slate-600 dark:text-slate-400">{pr.description}</span>
                           </div>
                         ))}
                       </div>
