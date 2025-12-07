@@ -11,7 +11,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     name: 'Credit Risk Prediction System',
-    description: 'End-to-end credit risk scoring engine that classifies borrowers into four risk tiers, predicting default probabilities and assigning credit scores (300-900). Features real-time analytics dashboard with AI-powered insights for loan approval decisions.',
+    description: 'Built a credit risk scoring model that classifies borrowers into four risk tiers and assigns credit scores (300–900). Developed financial features like Loan-to-Income and Utilization Ratios, and used Optuna to tune the model for better accuracy (AUC-ROC).',
     technologies: ['Python', 'Scikit-learn', 'XGBoost', 'Optuna', 'Streamlit', 'Machine Learning'],
     github: 'https://github.com/PiyushPanwarFST/ml-project-credit-risk-modeling',
     image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&h=600&fit=crop',
@@ -24,7 +24,7 @@ export const projects: Project[] = [
   },
   {
     name: 'Health Insurance Premium Prediction',
-    description: 'High-precision ML prediction model achieving 98% accuracy for insurance premium estimation. Significantly reduced extreme prediction errors through domain-informed feature engineering and advanced statistical techniques.',
+    description: 'Built a prediction model achieving 98% accuracy by segmenting data into "Young" and "Rest" groups to handle demographic differences. Reduced extreme prediction errors (from 27% to 2%) by adding a "Genetic Risk" feature for the under-25 demographic.',
     technologies: ['Python', 'XGBoost', 'Linear Regression', 'Statistics', 'Feature Engineering', 'VIF Analysis'],
     github: 'https://github.com/PiyushPanwarFST/ml-project-premium-prediction',
     image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=600&fit=crop',
