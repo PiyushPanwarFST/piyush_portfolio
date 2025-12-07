@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
-import { FaGithub, FaLinkedin, FaEnvelope, FaDownload } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaEnvelope, FaDownload, FaArrowRight } from 'react-icons/fa'
 import Image from 'next/image'
 import { personalInfo } from '@/data/personalInfo'
 
@@ -10,7 +10,7 @@ export default function Hero() {
   const [text, setText] = useState('')
   const [isDeleting, setIsDeleting] = useState(false)
   const [loopNum, setLoopNum] = useState(0)
-  const [typingSpeed, setTypingSpeed] = useState(150)
+  const [typingSpeed, setTypingSpeed] = useState(100)
 
   const titles = [
     "Software Engineer",
@@ -29,7 +29,7 @@ export default function Hero() {
         : fullText.substring(0, text.length + 1)
       )
 
-      setTypingSpeed(isDeleting ? 30 : 150)
+      setTypingSpeed(isDeleting ? 30 : 100)
 
       if (!isDeleting && text === fullText) {
         setTimeout(() => setIsDeleting(true), 2000)
@@ -45,149 +45,94 @@ export default function Hero() {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center section-container pt-32 relative overflow-hidden">
-      {/* Animated gradient orbs around image */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
+        {/* Left Column: Text Content */}
         <motion.div
-          className="absolute w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-r from-primary/30 to-secondary/30 blur-3xl"
-          animate={{
-            x: [0, 30, -30, 0],
-            y: [0, -30, 30, 0],
-            scale: [1, 1.2, 0.8, 1],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-        />
-        <motion.div
-          className="absolute w-48 h-48 md:w-64 md:h-64 rounded-full bg-gradient-to-r from-secondary/30 to-accent/30 blur-3xl"
-          animate={{
-            x: [0, -40, 40, 0],
-            y: [0, 40, -40, 0],
-            scale: [1, 0.8, 1.2, 1],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: 'easeInOut',
-            delay: 1,
-          }}
-        />
-      </div>
-
-      <div className="text-center relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-left z-10 order-2 lg:order-1"
         >
-          <div className="mb-8 relative">
-            {/* Image container with gradient border */}
-            <div className="relative w-48 h-48 md:w-56 md:h-56 mx-auto rounded-full bg-gradient-to-br from-primary via-secondary to-accent p-1">
-              <div className="w-full h-full rounded-full bg-gray-50 dark:bg-gray-900 overflow-hidden relative backdrop-blur-sm">
-                <div className="absolute inset-0 flex items-center justify-center text-5xl md:text-6xl font-bold gradient-text z-0">
-                  {personalInfo.initials}
-                </div>
-                <Image
-                  src="/profile.jpg"
-                  alt={personalInfo.name}
-                  fill
-                  className="object-cover rounded-full z-10"
-                  priority
-                  unoptimized
-                  onLoad={(e) => {
-                    const target = e.target as HTMLImageElement
-                    const parent = target.parentElement
-                    if (parent) {
-                      const initialsDiv = parent.querySelector('div')
-                      if (initialsDiv) {
-                        initialsDiv.style.display = 'none'
-                      }
-                    }
-                  }}
-                />
-              </div>
-            </div>
+          <div className="inline-block px-4 py-2 mb-6 bg-blue-50 dark:bg-blue-900/20 text-secondary rounded-full text-sm font-semibold tracking-wide uppercase">
+            Available for Opportunities
           </div>
 
-          <motion.h1
-            className="text-4xl md:text-6xl font-bold mb-4 text-gray-900 dark:text-gray-100"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-          >
-            Hi, I&apos;m <span className="gradient-text">{personalInfo.name}</span>
-          </motion.h1>
+          <h1 className="text-5xl lg:text-7xl font-bold mb-6 text-primary dark:text-white leading-tight">
+            Making AI <span className="text-secondary">Reliable</span><br />
+            with Math & Code
+          </h1>
 
-          <motion.div
-            className="h-8 md:h-10 mb-2"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-          >
-            <span className="text-xl md:text-3xl text-gray-600 dark:text-gray-300 font-medium">
-              I am a <span className="text-primary">{text}</span>
-              <span className="animate-pulse">|</span>
+          <div className="h-8 mb-6">
+            <span className="text-xl lg:text-2xl text-gray-600 dark:text-gray-300 font-medium">
+              I am a <span className="text-secondary font-semibold">{text}</span>
+              <span className="animate-pulse text-secondary">|</span>
             </span>
-          </motion.div>
+          </div>
 
-          <motion.p
-            className="text-lg text-gray-500 dark:text-gray-400 mb-8 max-w-2xl mx-auto mt-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.6 }}
-          >
-            {personalInfo.bio}
-          </motion.p>
+          <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-xl leading-relaxed">
+            I apply reliability engineering (Stress-Strength models) to predict when LLMs fail.
+          </p>
 
-          <motion.div
-            className="flex justify-center space-x-6 mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.6 }}
-          >
+          <div className="flex flex-wrap gap-4">
             <a
-              href={personalInfo.social.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-2xl text-gray-900 dark:text-gray-100 hover:text-primary transition-colors hover:scale-110 transform duration-200"
+              href="#projects"
+              className="inline-flex items-center px-8 py-4 bg-secondary text-white rounded-lg font-medium hover:bg-blue-600 transition-all shadow-lg hover:shadow-blue-500/25"
             >
-              <FaGithub />
+              View Projects <FaArrowRight className="ml-2" />
             </a>
-            <a
-              href={personalInfo.social.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-2xl text-gray-900 dark:text-gray-100 hover:text-primary transition-colors hover:scale-110 transform duration-200"
-            >
-              <FaLinkedin />
-            </a>
-            <a
-              href={`mailto:${personalInfo.email}`}
-              className="text-2xl text-gray-900 dark:text-gray-100 hover:text-primary transition-colors hover:scale-110 transform duration-200"
-            >
-              <FaEnvelope />
-            </a>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.6 }}
-          >
             <a
               href={personalInfo.resume}
               download
-              className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-primary to-secondary text-white rounded-full hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 transform hover:-translate-y-1"
+              className="inline-flex items-center px-8 py-4 bg-white dark:bg-gray-800 text-primary dark:text-white border border-gray-200 dark:border-gray-700 rounded-lg font-medium hover:bg-gray-50 dark:hover:bg-gray-700 transition-all"
             >
-              <FaDownload className="mr-2" />
-              Download Resume
+              <FaDownload className="mr-2" /> Resume
             </a>
-          </motion.div>
+          </div>
+
+          <div className="mt-12 flex items-center space-x-6 text-gray-500">
+            <a href={personalInfo.social.github} target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition-colors text-2xl"><FaGithub /></a>
+            <a href={personalInfo.social.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition-colors text-2xl"><FaLinkedin /></a>
+            <a href={`mailto:${personalInfo.email}`} className="hover:text-secondary transition-colors text-2xl"><FaEnvelope /></a>
+          </div>
+        </motion.div>
+
+        {/* Right Column: Visuals */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="relative order-1 lg:order-2 flex justify-center"
+        >
+          <div className="relative w-72 h-72 md:w-96 md:h-96">
+            {/* Abstract Background Elements */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-blue-100 to-indigo-100 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-full blur-3xl animate-pulse-slow"></div>
+
+            {/* Profile Image with Corporate Styling */}
+            <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-gray-800 transform rotate-3 hover:rotate-0 transition-transform duration-500">
+              <Image
+                src="/profile.jpg"
+                alt={personalInfo.name}
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+
+            {/* Floating Badge */}
+            <motion.div
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -bottom-6 -left-6 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-xl border border-gray-100 dark:border-gray-700 flex items-center space-x-3"
+            >
+              <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+              <div>
+                <p className="text-xs text-gray-500 uppercase font-semibold">Status</p>
+                <p className="text-sm font-bold text-primary dark:text-white">Open to Work</p>
+              </div>
+            </motion.div>
+          </div>
         </motion.div>
       </div>
     </section>
   )
 }
-

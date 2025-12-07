@@ -9,11 +9,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#6366f1', // Indigo-500
-        secondary: '#8b5cf6', // Violet-500
-        accent: '#06b6d4', // Cyan-500
-        dark: '#020617', // Slate-950 (Deep dark)
-        light: '#f8fafc', // Slate-50
+        primary: '#0f172a', // Slate-900 (Corporate Blue-Black)
+        secondary: '#3b82f6', // Blue-500 (Standard Corporate Blue)
+        accent: '#0ea5e9', // Sky-500 (Light Blue Accent)
+        dark: '#020617', // Slate-950 (Deep Dark)
+        light: '#f8fafc', // Slate-50 (Clean White/Grey)
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',
