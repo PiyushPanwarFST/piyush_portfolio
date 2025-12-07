@@ -8,7 +8,6 @@ export const personalInfo = {
   email: 'piyush2002panwar@gmail.com',
   phone: '+91-8306968232',
   resume: '/Piyush_panwar_resume.pdf',
-  
   social: {
     github: 'https://github.com/PiyushPanwarFST',
     linkedin: 'https://www.linkedin.com/in/piyush-panwar-80b65827b/',
