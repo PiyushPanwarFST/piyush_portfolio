@@ -1,11 +1,47 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useState, useEffect } from 'react'
 import { FaGithub, FaLinkedin, FaEnvelope, FaDownload } from 'react-icons/fa'
 import Image from 'next/image'
 import { personalInfo } from '@/data/personalInfo'
 
 export default function Hero() {
+  const [text, setText] = useState('')
+  const [isDeleting, setIsDeleting] = useState(false)
+  const [loopNum, setLoopNum] = useState(0)
+  const [typingSpeed, setTypingSpeed] = useState(150)
+
+  const titles = [
+    "Software Engineer",
+    "AI/ML Researcher",
+    "Bayesian Analyst",
+    "Open Source Contributor"
+  ]
+
+  useEffect(() => {
+    const handleTyping = () => {
+      const i = loopNum % titles.length
+      const fullText = titles[i]
+
+      setText(isDeleting
+        ? fullText.substring(0, text.length - 1)
+        : fullText.substring(0, text.length + 1)
+      )
+
+      setTypingSpeed(isDeleting ? 30 : 150)
+
+      if (!isDeleting && text === fullText) {
+        setTimeout(() => setIsDeleting(true), 2000)
+      } else if (isDeleting && text === '') {
+        setIsDeleting(false)
+        setLoopNum(loopNum + 1)
+      }
+    }
+
+    const timer = setTimeout(handleTyping, typingSpeed)
+    return () => clearTimeout(timer)
+  }, [text, isDeleting, loopNum, typingSpeed, titles])
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center section-container pt-32 relative overflow-hidden">
@@ -25,7 +61,7 @@ export default function Hero() {
           }}
         />
         <motion.div
-          className="absolute w-48 h-48 md:w-64 md:h-64 rounded-full bg-gradient-to-r from-secondary/30 to-primary/30 blur-3xl"
+          className="absolute w-48 h-48 md:w-64 md:h-64 rounded-full bg-gradient-to-r from-secondary/30 to-accent/30 blur-3xl"
           animate={{
             x: [0, -40, 40, 0],
             y: [0, 40, -40, 0],
@@ -47,9 +83,9 @@ export default function Hero() {
           transition={{ duration: 0.6 }}
         >
           <div className="mb-8 relative">
-            {/* Image container with gradient border - stable, no animations */}
-            <div className="relative w-48 h-48 md:w-56 md:h-56 mx-auto rounded-full bg-gradient-to-br from-primary to-secondary p-1">
-              <div className="w-full h-full rounded-full bg-gray-50 dark:bg-gray-900 overflow-hidden relative">
+            {/* Image container with gradient border */}
+            <div className="relative w-48 h-48 md:w-56 md:h-56 mx-auto rounded-full bg-gradient-to-br from-primary via-secondary to-accent p-1">
+              <div className="w-full h-full rounded-full bg-gray-50 dark:bg-gray-900 overflow-hidden relative backdrop-blur-sm">
                 <div className="absolute inset-0 flex items-center justify-center text-5xl md:text-6xl font-bold gradient-text z-0">
                   {personalInfo.initials}
                 </div>
@@ -61,7 +97,6 @@ export default function Hero() {
                   priority
                   unoptimized
                   onLoad={(e) => {
-                    // Hide initials when image loads
                     const target = e.target as HTMLImageElement
                     const parent = target.parentElement
                     if (parent) {
@@ -75,7 +110,7 @@ export default function Hero() {
               </div>
             </div>
           </div>
-          
+
           <motion.h1
             className="text-4xl md:text-6xl font-bold mb-4 text-gray-900 dark:text-gray-100"
             initial={{ opacity: 0, y: 20 }}
@@ -84,18 +119,21 @@ export default function Hero() {
           >
             Hi, I&apos;m <span className="gradient-text">{personalInfo.name}</span>
           </motion.h1>
-          
-          <motion.p
-            className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-2"
+
+          <motion.div
+            className="h-8 md:h-10 mb-2"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.6 }}
           >
-            {personalInfo.title}
-          </motion.p>
-          
+            <span className="text-xl md:text-3xl text-gray-600 dark:text-gray-300 font-medium">
+              I am a <span className="text-primary">{text}</span>
+              <span className="animate-pulse">|</span>
+            </span>
+          </motion.div>
+
           <motion.p
-            className="text-lg text-gray-500 dark:text-gray-400 mb-8 max-w-2xl mx-auto"
+            className="text-lg text-gray-500 dark:text-gray-400 mb-8 max-w-2xl mx-auto mt-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
@@ -113,7 +151,7 @@ export default function Hero() {
               href={personalInfo.social.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-2xl text-gray-900 dark:text-gray-100 hover:text-primary transition-colors"
+              className="text-2xl text-gray-900 dark:text-gray-100 hover:text-primary transition-colors hover:scale-110 transform duration-200"
             >
               <FaGithub />
             </a>
@@ -121,13 +159,13 @@ export default function Hero() {
               href={personalInfo.social.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-2xl text-gray-900 dark:text-gray-100 hover:text-primary transition-colors"
+              className="text-2xl text-gray-900 dark:text-gray-100 hover:text-primary transition-colors hover:scale-110 transform duration-200"
             >
               <FaLinkedin />
             </a>
             <a
               href={`mailto:${personalInfo.email}`}
-              className="text-2xl text-gray-900 dark:text-gray-100 hover:text-primary transition-colors"
+              className="text-2xl text-gray-900 dark:text-gray-100 hover:text-primary transition-colors hover:scale-110 transform duration-200"
             >
               <FaEnvelope />
             </a>
@@ -141,7 +179,7 @@ export default function Hero() {
             <a
               href={personalInfo.resume}
               download
-              className="inline-flex items-center px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors"
+              className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-primary to-secondary text-white rounded-full hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 transform hover:-translate-y-1"
             >
               <FaDownload className="mr-2" />
               Download Resume

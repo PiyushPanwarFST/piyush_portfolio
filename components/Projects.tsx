@@ -26,28 +26,29 @@ export default function Projects() {
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-primary/30"
+              className="flex flex-col h-full bg-white/80 dark:bg-gray-800/50 backdrop-blur-md rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700 hover:border-primary/50 group"
               initial={{ opacity: 0, y: 50 }}
               animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
+              whileHover={{ y: -5 }}
             >
               <div className="h-48 relative overflow-hidden">
                 {project.image ? (
                   <img
                     src={project.image}
                     alt={project.name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                 ) : (
                   <div className="h-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
                     <span className="text-white text-4xl font-bold">{project.name.charAt(0)}</span>
                   </div>
                 )}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300"></div>
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">{project.name}</h3>
-                <p className="text-gray-700 dark:text-gray-300 mb-4">{project.description}</p>
+              <div className="p-6 flex flex-col flex-grow">
+                <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100 group-hover:text-primary transition-colors">{project.name}</h3>
+                <p className="text-gray-700 dark:text-gray-300 mb-4 flex-grow">{project.description}</p>
                 {project.highlights && (
                   <ul className="list-disc list-inside space-y-1 mb-4 text-sm text-gray-600 dark:text-gray-400">
                     {project.highlights.map((highlight, idx) => (
@@ -55,23 +56,23 @@ export default function Projects() {
                     ))}
                   </ul>
                 )}
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-2 mb-6">
                   {project.technologies.map((tech, idx) => (
                     <span
                       key={idx}
-                      className="px-3 py-1 bg-teal-50 dark:bg-primary/20 text-teal-700 dark:text-teal-300 rounded-full text-xs font-medium border border-teal-200 dark:border-teal-700"
+                      className="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium border border-primary/20"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
-                <div className="flex space-x-4">
+                <div className="flex space-x-4 mt-auto">
                   {project.github && (
                     <a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center text-gray-900 dark:text-gray-100 hover:text-primary transition-colors"
+                      className="flex items-center px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-lg hover:bg-primary hover:text-white transition-all duration-300"
                     >
                       <FaGithub className="mr-2" />
                       Code
@@ -82,10 +83,10 @@ export default function Projects() {
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center text-gray-900 dark:text-gray-100 hover:text-primary transition-colors"
+                      className="flex items-center px-4 py-2 bg-gradient-to-r from-primary to-secondary text-white rounded-lg hover:shadow-lg hover:shadow-primary/25 transition-all duration-300"
                     >
                       <FaExternalLinkAlt className="mr-2" />
-                      Demo
+                      Live App
                     </a>
                   )}
                 </div>

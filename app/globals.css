@@ -54,3 +54,21 @@
   background-size: 200% 200%;
 }
 
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/50 hover:bg-primary rounded-full transition-colors;
+}
+
+/* Text Selection */
+::selection {
+  @apply bg-primary/30 text-primary;
+}
+
