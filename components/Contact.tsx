@@ -27,7 +27,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="section-container bg-gradient-to-br from-teal-50 via-white to-emerald-50 dark:bg-gray-800">
+    <section id="contact" className="section-container bg-gradient-to-br from-teal-50 via-white to-emerald-50 dark:from-dark dark:via-dark dark:to-dark dark:bg-none dark:bg-dark">
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 50 }}
