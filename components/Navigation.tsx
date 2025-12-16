@@ -30,25 +30,27 @@ export default function Navigation() {
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${scrolled
-        ? 'bg-white/90 dark:bg-dark/90 backdrop-blur-sm shadow-sm border-b border-slate-200 dark:border-slate-800 py-4'
+        ? 'bg-white/70 dark:bg-dark/70 backdrop-blur-md shadow-sm border-b border-slate-200/50 dark:border-slate-800/50 py-4'
         : 'bg-transparent py-6'
         }`}
     >
       <div className="section-container !py-0 flex justify-between items-center">
-        <a href="#home" className="text-xl font-bold text-primary dark:text-white tracking-tight">
+        <a href="#home" className="text-xl font-bold text-primary dark:text-white tracking-tight hover:opacity-80 transition-opacity">
           {personalInfo.name} <span className="text-secondary">| AI Engineer</span>
         </a>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
-            <a
+            <motion.a
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-secondary dark:hover:text-secondary transition-colors"
+              whileHover={{ scale: 1.05, color: '#2dd4bf' }}
+              className="text-sm font-medium text-slate-600 dark:text-slate-300 transition-colors relative group"
             >
               {link.name}
-            </a>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
+            </motion.a>
           ))}
           <ThemeToggle />
         </div>

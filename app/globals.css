@@ -56,7 +56,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-primary/50 hover:bg-primary rounded-full transition-colors;
+  @apply bg-slate-300 dark:bg-slate-700 hover:bg-secondary/80 rounded-full transition-colors;
 }
 
 /* Text Selection */

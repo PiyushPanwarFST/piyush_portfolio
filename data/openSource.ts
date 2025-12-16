@@ -5,6 +5,7 @@ export interface OpenSourceContribution {
     number: string
     title: string
     impact: string
+    image?: string
   }[]
   technologies: string[]
   link?: string
@@ -19,11 +20,13 @@ export const openSourceContributions: OpenSourceContribution[] = [
         number: 'bayes_factor()',
         title: 'Implemented Bayesian Model Comparison feature',
         impact: 'Core computational feature for advanced statistical analysis',
+        image: '/images/opensource/bayes_factor.png',
       },
       {
         number: 'plot_ppc_intervals()',
         title: 'Developed posterior predictive check visualization',
         impact: 'Enhanced model validation capabilities for users',
+        image: '/images/opensource/ppc_intervals.png',
       },
       {
         number: 'Refactoring',

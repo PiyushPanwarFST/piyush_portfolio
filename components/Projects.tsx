@@ -107,11 +107,11 @@ export default function Projects() {
                     )}
                   </div>
                   {project.demo ? (
-                    <a href={project.demo} target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-secondary hover:text-teal-300 transition-colors flex items-center font-mono">
-                      Live Demo <FaArrowRight className="ml-1 text-xs" />
+                    <a href={project.demo} target="_blank" rel="noopener noreferrer" className="text-sm font-bold text-secondary hover:text-teal-300 transition-colors flex items-center font-mono group/link">
+                      <FaExternalLinkAlt className="mr-2 text-xs group-hover/link:-translate-y-0.5 transition-transform" /> Live Demo
                     </a>
                   ) : (
-                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-secondary hover:text-teal-300 transition-colors flex items-center font-mono">
+                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-slate-500 hover:text-teal-300 transition-colors flex items-center font-mono">
                       View Code <FaArrowRight className="ml-1 text-xs" />
                     </a>
                   )}

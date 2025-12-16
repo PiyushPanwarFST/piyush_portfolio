@@ -45,6 +45,11 @@ export default function Hero() {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center section-container pt-32 relative overflow-hidden">
+      {/* Background Gradient Mesh */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-secondary/5 rounded-full blur-[100px] animate-pulse-slow"></div>
+        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-primary/5 dark:bg-slate-700/5 rounded-full blur-[100px] animate-pulse-slow delay-1000"></div>
+      </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
         {/* Left Column: Text Content */}
         <motion.div
@@ -75,19 +80,23 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-wrap gap-4">
-            <a
+            <motion.a
               href="#projects"
-              className="inline-flex items-center px-8 py-4 bg-secondary text-primary font-bold rounded-md hover:bg-teal-300 transition-all shadow-lg hover:shadow-teal-500/25 font-mono"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center px-8 py-4 bg-secondary text-primary font-bold rounded-md hover:bg-teal-300 transition-colors shadow-lg hover:shadow-teal-500/25 font-mono"
             >
               View Projects <FaArrowRight className="ml-2" />
-            </a>
-            <a
+            </motion.a>
+            <motion.a
               href={personalInfo.resume}
               download
-              className="inline-flex items-center px-8 py-4 bg-white dark:bg-surface text-slate-900 dark:text-slate-100 border border-slate-200 dark:border-slate-700 rounded-md font-medium hover:bg-slate-50 dark:hover:bg-slate-700 transition-all font-mono"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center px-8 py-4 bg-white dark:bg-surface text-slate-900 dark:text-slate-100 border border-slate-200 dark:border-slate-700 rounded-md font-medium hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors font-mono"
             >
               <FaDownload className="mr-2" /> Resume
-            </a>
+            </motion.a>
           </div>
 
           <div className="mt-12 flex items-center space-x-6 text-slate-500">
@@ -121,9 +130,9 @@ export default function Hero() {
 
             {/* Floating Badge */}
             <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -bottom-6 -left-6 bg-white dark:bg-surface p-4 rounded-lg shadow-xl border border-slate-100 dark:border-slate-700 flex items-center space-x-3"
+              animate={{ y: [0, -15, 0] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -bottom-6 -left-6 bg-white/90 dark:bg-surface/90 backdrop-blur-sm p-4 rounded-lg shadow-xl border border-slate-100 dark:border-slate-700 flex items-center space-x-3"
             >
               <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
               <div className="font-mono">
